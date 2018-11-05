@@ -16,7 +16,7 @@
                     lang: 'jpn'
                 })
                 .progress(function (p) {
-                    $("#msg").text('準備中🐹 <' + p.status + ": " + (100 * p.progress).toFixed(1) + '%>')
+                    $("#msg").text('準備中 <' + p.status + ": " + (100 * p.progress).toFixed(1) + '%>')
                 })
                 .then(function (result) {
                     $("#msg").text('準備完了')
@@ -28,13 +28,13 @@
 <body>
     <div align="center">
         <video id="player" controls autoplay playsinline></video>
-        <canvas id="canvas" width="300" height="100"></canvas>
+        <canvas id="canvas" width="100%" height="80%"></canvas>
         <div class="button">
             <button id="capture">日本語を撮影する</button>
         </div>
 
         <div id="msg" align="center"></div>
-        <canvas id="snapshot" width="300" height="100"></canvas>
+        <canvas id="snapshot"></canvas>
         <br>
         <script>
             var video = document.getElementById("player"),
@@ -51,10 +51,9 @@
                 ctx.putImageData(imgData, 0, 0);
                 requestAnimationFrame(draw);
             }
-            var snapshotCanvas = document.getElementById('snapshot');
+            //var snapshotCanvas = document.getElementById('snapshot');
             var captureButton = document.getElementById('capture');
 
-            var snapshotButton = document.getElementById('snapshotbutton');
             var handleSuccess = function (stream) {
                 video.srcObject = stream;
             };
@@ -62,8 +61,8 @@
 
             captureButton.addEventListener('click', function () {
                 var context = snapshot.getContext('2d');
-                context.drawImage(video, 100, 300, 600, 200, 0, 0, snapshotCanvas.width,
-                    snapshotCanvas.height);
+                context.drawImage(video, 100, 300, 600, 200, 0, 0, canvas.width,
+                    canvas.height);
                 const url = snapshot.toDataURL("image/png");
                 Tesseract
                     .recognize(url, {
