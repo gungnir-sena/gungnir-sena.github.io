@@ -21,6 +21,11 @@ body {
   width: 100%; height: 100%;
 }
 
+div[id="btn"]{
+  bottom: 30px;
+  text-align: center;
+}
+
 input[id="take_picture"]{
   display: inline-block;
   position: relative;
