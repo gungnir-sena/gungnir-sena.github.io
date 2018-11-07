@@ -30,7 +30,7 @@ function draw() {
 }
 
 function take_picture() {
-    alert("press button4");
+    alert("press button7");
 
     context.drawImage(video, 0, 0);
     const url = canvas.toDataURL("image/png");
@@ -39,19 +39,17 @@ function take_picture() {
             lang: 'jpn'
         })
         .progress(function (p) {
-            $("#msg").text(p.status + ": " + p.progress)
+            alert(p.status + ": " + p.progress)
         })
         .then(function (result) {
             console.log(result.symbols);
-            $("#msg").text("Progress Complete")
-            var elem = document.createElement('div');
-            elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#EEEEEE'><img src=" + url + " /></div><br>"
-            var parent = document.getElementById("results");
-            parent.insertBefore(elem, parent.firstChild);
-            var numdiv = document.getElementById(num);
-            var msg = document.createElement('div');
-            msg.innerHTML = result.text;
-            numdiv.appendChild(msg);
-            num += 1;
+            alert("Progress Complete")
+            // var elem = document.createElement('div');
+            // elem.innerHTML = "<div id=" + num + " style='width:300px; background-color:#EEEEEE'><img src=" + url + " /></div><br>"
+            // var parent = document.getElementById("results");
+            // parent.insertBefore(elem, parent.firstChild);
+            // var numdiv = document.getElementById(num);
+            // var msg = document.createElement('div');
+            alert(result.text);
         });
 };

@@ -5,26 +5,25 @@ body {
 
 #canvas {
   position: relative;
-  bottom: 10px; left: 10px;
   transform-origin: left top;
-  transform: scale(.1);
+  transform: scale(.2);
+  bottom: 60px; left: 10px;
 }
-
-#video {
-  display: block;
-  /* transform: rotateZ(180deg); なぜか天地反転するので天地反転し返す */
-}
-
 #videobox {
   display: block;
   position: absolute;
   top: 0; left: 0;
   width: 80%; height: 80%;
 }
+#video {
+  display: block;
+  /* transform: rotateZ(180deg); なぜか天地反転するので天地反転し返す */
+}
+
 
 div[id="btn"]{
   position: relative;
-  bottom: 30px;
+  bottom: 60px;
   text-align: center;
 }
 
