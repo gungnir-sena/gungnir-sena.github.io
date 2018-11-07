@@ -1,24 +1,11 @@
-const medias = {
-    audio: false, video: {
-        facingMode: {
-            exact: "environment"
-        }
-    }
-},
-    video = document.getElementById("video"),
+const video = document.getElementById("video"),
     canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d");
 
-navigator.getUserMedia(medias, successCallback, errorCallback);
-
 requestAnimationFrame(draw);
 
-function successCallback(stream) {
+var handleSuccess = function (stream) {
     video.srcObject = stream;
-};
-
-function errorCallback(err) {
-    alert(err);
 };
 
 function draw() {
@@ -53,3 +40,12 @@ function take_picture() {
             alert(result.text);
         });
 };
+var front = false;
+var medias = {
+    audio: false,
+    video: {
+        facingMode: (front ? "user" : "environment")
+    }
+};
+
+navigator.mediaDevices.getUserMedia(medias).then(handleSuccess);
