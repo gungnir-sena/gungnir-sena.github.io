@@ -30,7 +30,7 @@ function draw() {
 }
 
 function take_picture() {
-    alert("press button7");
+    alert("press button10");
 
     context.drawImage(video, 0, 0);
     const url = canvas.toDataURL("image/png");
