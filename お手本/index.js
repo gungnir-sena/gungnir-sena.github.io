@@ -38,7 +38,12 @@ captureButton.addEventListener('click', function () {
             parent.insertBefore(elem, parent.firstChild);
             var numdiv = document.getElementById(num);
             var msg = document.createElement('div');
-            msg.innerHTML = result.text;
+            var a = result.text;
+            if (String(a).match(/(?<=￥|¥)|(?=円)/g)) {
+                var number = String(a).match(/[0-9]+,?[0-9]*/g);
+                a=(number/1000)+"時間労働";
+            }
+            msg.innerHTML = a;
             numdiv.appendChild(msg);
             num += 1;
         });

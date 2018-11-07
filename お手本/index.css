@@ -1,4 +1,5 @@
 body {
+  align-content: center;
   margin: 0;
   background: #FFF;
 }
@@ -6,17 +7,24 @@ body {
   position: relative;
   transform-origin: left top;
   transform: scale(.2);
-  top: 600px; left: 10px;
+  top: 10px; left: 10px;
 }
 #videobox {
   display: block;
   position: absolute;
   text-align: center;
-  width: 80%; height: 80%;
+  width: 100%; height: 80%;
 }
 #player {
 display: block;
+width: 100%;
+height: 100%;
 }
+
+div[id="btn"]{
+  text-align: center;
+}
+
 #capture{
   display: inline-block;
   position: relative;
