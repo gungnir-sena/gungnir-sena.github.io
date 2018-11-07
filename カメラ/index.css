@@ -5,7 +5,7 @@ body {
 
 #canvas {
   position: absolute;
-  bottom: 10px; left: 10px;
+  bottom: 30px; left: 10px;
   transform-origin: left top;
   transform: scale(.1);
 }
