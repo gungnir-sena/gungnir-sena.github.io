@@ -5,7 +5,7 @@ body {
 
 #canvas {
   position: absolute;
-  bottom: 30px; left: 10px;
+  bottom: 10px; left: 10px;
   transform-origin: left top;
   transform: scale(.1);
 }
@@ -22,7 +22,7 @@ body {
   width: 100%; height: 100%;
 }
 
-/* input[id="take_picture"]{
+input[id="take_picture"]{
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -56,4 +56,4 @@ input[id="take_picture"] .fa:active{
   background-image: -webkit-linear-gradient(#efefef 0%, #d6d6d6 100%);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: solid 2px #d8d8d8;
-}*/
+}

@@ -23,8 +23,12 @@ function errorCallback(err) {
 
 function draw() {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight*0.8;
+    canvas.height = window.innerHeight;
     ctx.drawImage(video, 0, 0);
 
     requestAnimationFrame(draw);
+}
+
+function take_picture(){
+    alert("press button");
 }
