@@ -48,6 +48,7 @@ captureButton.addEventListener('click', function () {
             num += 1;
         });
 });
+alert("a");
 console.log();
 var front = false;
 var constraints = {
