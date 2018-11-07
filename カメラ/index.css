@@ -7,7 +7,7 @@ body {
   position: relative;
   transform-origin: left top;
   transform: scale(.2);
-  bottom: 60px; left: 10px;
+  top: 100px; left: 10px;
 }
 #videobox {
   display: block;
