@@ -30,5 +30,5 @@ function draw() {
 }
 
 function take_picture(){
-    alert("press button");
+    alert("press button2");
 }
