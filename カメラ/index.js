@@ -29,11 +29,11 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-function take_picture(){
-    var w=video.offsetWidth;
-    var h=video.offsetHeight;
+// function take_picture(){
+//     var w=video.offsetWidth;
+//     var h=video.offsetHeight;
 
-    canvas.setAttribute("width",w);
-    canvas.setAttribute("height",h);
-    ctx.drawimage(video,0,0,w,h);
-}
+//     canvas.setAttribute("width",w);
+//     canvas.setAttribute("height",h);
+//     ctx.drawimage(video,0,0,w,h);
+// }
