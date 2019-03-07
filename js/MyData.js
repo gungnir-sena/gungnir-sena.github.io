@@ -1,23 +1,12 @@
 var storage = null;
-//var storageArray = new Array();
 var count = 0;
-// var total_distance, total_money, total_time;
 window.onload = function () {
     try {
-        // total_money = localStorage.getItem("total_money");
-        // total_distance = localStorage.getItem("total_distance");
-        // total_time = localStorage.getItem("total_time");
-        // localStorage.removeItem("total_money");
-        // localStorage.removeItem("total_distance");
-        // localStorage.removeItem("total_time");
         storage = JSON.parse(localStorage || '{}');
     } catch (e) {
         storage = {};
     }
     show();
-    // localStorage.setItem("total_money", total_money);
-    // localStorage.setItem("total_distance", total_distance);
-    // localStorage.setItem("total_time", total_time);
 }
 
 window.onbeforeunload = function () {
@@ -89,12 +78,9 @@ function save() {
     var value = document.getElementById('value').value;
     var unit = document.getElementById('unit').value;
     var values = value + "," + unit;
-    //var values = key + "," + value + "," + unit;
     values = JSON.stringify(values);
     if (key && value) {
-        //storage[key] = values;
         localStorage.setItem(key, values);
-        //storageArray[count] = values;
         count++;
     }
     window.location.reload();
@@ -136,10 +122,6 @@ function SortLocalStorage() {
     if (localStorage.length > 0) {
         var localStorageArray = new Array();
         for (i = 0; i < localStorage.length; i++) {
-            // if (key == "total_money" || key == "total_distance" || key == "total_time") {
-            //     console.log("a");
-            //     break;
-            // }
             var str = localStorage.getItem(localStorage.key(i)).slice(1);
             str = str.slice(0, -1);
             str = str.split(",");
@@ -181,6 +163,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("save").addEventListener("click", save);
     document.getElementById("delete").addEventListener("click", del);
     document.getElementById("hozon").addEventListener("click", hozon);
-    document.getElementById("reset").addEventListener("click", reset);
+    document.getElementById("Reset").addEventListener("click", reset);
 });
 
