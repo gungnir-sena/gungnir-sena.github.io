@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body,
+        input,
+        textarea,
+        select {
+            /* 入力欄にフォーカスが当たっても拡大しない */
+            font-size: 17px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/demo.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="menu.css"> -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <link rel="stylesheet" href="button.css">
+    <script>
+        /* ピッチインピッチアウトによる拡大縮小を禁止 */
+        document.documentElement.addEventListener('touchstart', function (e) {
+            if (e.touches.length >= 2) { e.preventDefault(); }
+        }, { passive: false });
+
+        /* ダブルタップによる拡大を禁止 */
+        var t = 0;
+        document.documentElement.addEventListener('touchend', function (e) {
+            var now = new Date().getTime();
+            if ((now - t) < 350) {
+                e.preventDefault();
+            }
+            t = now;
+        }, false);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <header id="luxbar" class="luxbar-fixed">
+        <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+        <div class="luxbar-menu luxbar-menu-left luxbar-menu-light">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                </li>
+                <li class="luxbar-item"><a href="MyData.html" style="text-align: center;">体験登録</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <div class="canvas_wrap" style="width:100%; height:400px; text-align:center;">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <!--レスポンス結果表示-->
+    <pre id="results" class="bg-info"> </pre>
+    <hr>
+    <form id="fileform" style="text-align: center;">
+        <div class="form-group">
+            <label for="InputFile" id="input_label">カメラを起動する<i class="fas fa-camera"></i>
+                <input type="file" id="InputFile" name="imagefile">
+            </label>
+        </div>
+        <div id="sentence" style="display: inline-block;position: absolute; margin-left: -75px; margin-top: 6px;">自分ごと化</div>
+        <div id="on_off_wrap">
+            <input type="checkbox" id="on_off" capture="environment" accept="image/*" onchange="uploadFiles()" />
+            <label id="on_off_label" class="on_off_label" for="on_off" style="position: absolute;margin-top: 5px; margin-left: 20px;"><div></div></label>
+        </div>
+        <button type="button" id="change" class="btn btn-default" name="change" value="change" onclick="changeUnit()" style="display:none; font-size:25px;position: absolute;
+        margin-left: 90px;
+        margin-top: 4px;"><i class="
+            fas fa-sync-alt "></i></button>
+    </form>
+    <!-- <script src="js/file.js "></script> -->
+    <script src="canvas.js "></script>
+    <script src="js/ocr.js "></script>
+
+</body>
+
+</html>

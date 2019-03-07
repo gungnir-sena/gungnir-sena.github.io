@@ -1,0 +1,24 @@
+input[type="file"] {
+   display: none;
+}
+label[id="input_label"] {
+   background: #ddd;
+   padding: 10px 30px;
+   border-radius: 10px;
+   display: inline-block;
+   position: relative;
+}
+label[id="input_label"]::after {
+   font-size: 14px;
+   height: 20px;
+   line-height: 20px;
+   position: absolute;
+   right: -140px;
+   top: calc(50% - 10px);
+}
+label.changed::after {
+   content: "";
+}
+.filename {
+   font-size: 12px;
+}

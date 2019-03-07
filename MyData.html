@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>データ入力</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/extention.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <script src="js/MyData.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <style>
+        body,
+        input,
+        textarea,
+        select {
+            /* 入力欄にフォーカスが当たっても拡大しない */
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="luxbar" class="luxbar-fixed">
+        <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+        <div class="luxbar-menu luxbar-menu-left luxbar-menu-light">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin" id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                </li>
+                <li class="luxbar-item"><a href="index.html">自分ごと化フィルタ</a></li>
+            </ul>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <div class="MyData">
+        <div id="sintyou" style="margin-bottom:5px;">
+            <p>身長：<input type="number" id="height" step="0.1" value="170">cm</p>
+        </div>
+        <div id="taijyuu">
+            <p>体重：<input type="number" id="weight" step="0.1" value="60">Kg</p>
+        </div>
+        <div id="jikyuu">
+            <p>
+                <select name="kyuuyoseido" id="kyuuyoseido">
+                    <option value="時給">時給</option>
+                    <option value="日給">日給</option>
+                    <option value="週給">週給</option>
+                    <option value="月給">月給</option>
+                </select>：
+                <input type="number" id="fee" step="100" value="1000">円
+            </p>
+        </div>
+        <div id="button_wrapper">
+            <input type="button" value="保存" id="hozon">
+            <input type="reset" value="リセット" id="Reset" style="padding:8px;">
+        </div>
+
+    </div>
+    <br>
+    <div class="MyUnit">
+        <table id='list' border='1' cellspacing='0' cellpadding='10'>
+            <tr>
+                <th style="width:40%;">体験名</th>
+                <th style="width:40%;">値</th>
+                <th style="width:20%;">単位</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="input_area">
+        <input type="text" id='key' placeholder="体験を入力してください"> =
+        <input type="number" id='value' placeholder="数値を入力してください">
+        <select name="unit" id="unit">
+                    <option value="m">m</option>
+                    <option value="円">円</option>
+                    <option value="分">分</option>
+                </select>
+        <div class="button_wrapper">
+            <button id="save">登録</button>
+            <button id="delete">削除</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
