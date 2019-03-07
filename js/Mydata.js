@@ -183,4 +183,3 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("hozon").addEventListener("click", hozon);
     document.getElementById("reset").addEventListener("click", reset);
 });
-
